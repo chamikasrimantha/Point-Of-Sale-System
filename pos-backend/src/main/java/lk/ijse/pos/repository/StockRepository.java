@@ -12,6 +12,6 @@ import lk.ijse.pos.entity.StockEntity;
 
 @Repository
 public interface StockRepository extends JpaRepository<StockEntity, Long>{
-    @Query("SELECT q FROM StockEntity q WHERE q.itemEntity = :itemEntity")
+    @Query("SELECT s FROM StockEntity s JOIN s.items i WHERE i = :itemEntity")
     List<StockEntity> findStocksByItem(@Param("itemEntity") ItemEntity itemEntity);
 }
