@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -61,6 +62,11 @@ public class ItemController {
     @GetMapping("/categories/{id}/items")
     public ResponseEntity<List<ItemEntity>> getItemsByCategory(@PathVariable Long id){
         return ResponseEntity.ok().body(itemService.getItemsByCategory(id));
+    }
+
+    @DeleteMapping("/items/{id}")
+    public ItemEntity deleteCategory(@PathVariable Long id){
+        return itemService.deleteItem(id);
     }
 
 }
