@@ -1,0 +1,78 @@
+/* AdminCategory.css - Example styling */
+.admin-category-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.category-table th,
+.category-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.category-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.edit-input {
+    width: 100%;
+}
+
+.confirm-btn,
+.update-btn,
+.delete-btn {
+    padding: 6px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+}
+
+.update-btn {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
