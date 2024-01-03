@@ -12,4 +12,5 @@ public interface CategoryService {
     CategoryEntity getCategoryById(Long id);
     List<CategoryEntity> getAllCategories();
     CategoryEntity updateCategory(Long id, CategoryEntity categoryEntity);
+    CategoryEntity deleteCategory(Long id);
 }

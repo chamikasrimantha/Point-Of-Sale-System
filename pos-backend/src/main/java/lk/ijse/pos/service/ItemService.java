@@ -14,4 +14,5 @@ public interface ItemService {
     ItemEntity getItemById(Long id);
     ItemEntity updateItem(Long id, ItemEntity itemEntity);
     List<ItemEntity> getItemsByCategory(Long id);
+    ItemEntity deleteItem(Long id);
 }

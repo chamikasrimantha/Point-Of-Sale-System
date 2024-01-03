@@ -75,5 +75,16 @@ public class ItemServiceImpl implements ItemService{
             return null;
         }
     }
+
+    @Override
+    public ItemEntity deleteItem(Long id) {
+        ItemEntity item = itemRepository.findById(id).orElse(null);
+        if (item!=null) {
+            itemRepository.delete(item);
+            return item;
+        } else {
+            return null;
+        }
+    }
     
 }
