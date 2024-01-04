@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,12 +39,17 @@ public class StockController {
     }
 
     @PutMapping("/stocks/{id}")
-    public StockEntity updateStock(@PathVariable Long id, StockEntity stockEntity){
+    public StockEntity updateStock(@PathVariable Long id,@RequestBody StockEntity stockEntity){
         return stockService.updateStock(id, stockEntity);
     }
 
     @GetMapping("/items/{id}/stocks")
     public ResponseEntity<List<StockEntity>> getStocksByItem(@PathVariable Long id){
         return ResponseEntity.ok().body(stockService.getStocksByItem(id));
+    }
+
+    @DeleteMapping("/stocks/{id}")
+    public StockEntity deleteStock(@PathVariable Long id){
+        return stockService.deleteStock(id);
     }
 }

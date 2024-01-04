@@ -57,5 +57,16 @@ public class StockServiceImpl implements StockService{
             return null;
         }
     }
+
+    @Override
+    public StockEntity deleteStock(Long id) {
+        StockEntity stock = stockRepository.findById(id).orElse(null);
+        if (stock!=null) {
+            stockRepository.delete(stock);
+            return stock;
+        } else {
+            return null;
+        }
+    }
     
 }
