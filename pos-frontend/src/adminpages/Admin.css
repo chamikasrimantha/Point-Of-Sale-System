@@ -122,9 +122,16 @@ button {
     background-color: #45a049;
 }
 
-.bodyhere {
+.login {
     margin: 0 auto;
-    padding: 35px;
+    padding: 63px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.register {
+    margin: 0 auto;
+    padding: 10px;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }

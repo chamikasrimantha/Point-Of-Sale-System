@@ -26,8 +26,12 @@ export default function AdminRegister() {
     }
   }
 
+  const login = () => {
+    navigate("/admin/login")
+  }
+
   return (
-    <div className='bodyhere'>
+    <div className='register'>
       <div className="register-container">
         <h2>Register</h2>
         <form onSubmit={register}>
@@ -43,7 +47,12 @@ export default function AdminRegister() {
             <label htmlFor="email">Email:</label>
             <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="input-field" />
           </div>
+          <div className='form-group'>
           <button type="submit" className="register-btn">Register</button>
+          </div>
+          <div className='form-group'>
+            <p onClick={login}>Already have an account? Login here!</p>
+          </div>
         </form>
       </div>
     </div>
