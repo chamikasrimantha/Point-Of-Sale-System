@@ -30,7 +30,7 @@ public class ItemServiceImpl implements ItemService{
     public ItemEntity createItem(ItemDto itemDto) {
         CategoryEntity categoryEntity = categoryRepository.findById(itemDto.getCategoryId()).orElse(null);
         StockEntity stockEntity = stockRepository.findById(itemDto.getStockId()).orElse(null);
-        if (categoryEntity!=null) {
+        if (categoryEntity!=null && stockEntity!=null) {
             ItemEntity itemEntity = new ItemEntity();
             itemEntity.setName(itemDto.getName());
             itemEntity.setPrice(itemDto.getPrice());
@@ -68,8 +68,8 @@ public class ItemServiceImpl implements ItemService{
         if (existingItem!=null) {
             existingItem.setName(itemEntity.getName());
             existingItem.setPrice(itemEntity.getPrice());
-            existingItem.setCategoryEntity(itemEntity.getCategoryEntity());
-            existingItem.setStockEntity(itemEntity.getStockEntity());
+            // existingItem.setCategoryEntity(itemEntity.getCategoryEntity());
+            // existingItem.setStockEntity(itemEntity.getStockEntity());
             return itemRepository.save(existingItem);
         } else {
             return null;

@@ -25,6 +25,7 @@ import lombok.Setter;
 public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "categoryId")
     private Long id;
 
     @Column(unique = true)

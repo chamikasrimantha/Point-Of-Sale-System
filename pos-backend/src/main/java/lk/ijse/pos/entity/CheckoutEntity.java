@@ -26,6 +26,7 @@ public class CheckoutEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "checkoutId")
     private Long id;
 
     @Column(nullable = false)
@@ -37,8 +38,8 @@ public class CheckoutEntity {
     @ManyToMany
     @JoinTable(
         name = "checkout_item",
-        joinColumns = @JoinColumn(name = "checkout_id"),
-        inverseJoinColumns = @JoinColumn(name = "item_id")
+        joinColumns = @JoinColumn(name = "checkoutId"),
+        inverseJoinColumns = @JoinColumn(name = "itemId")
     )
     private Set<ItemEntity> items = new HashSet<>();
 }

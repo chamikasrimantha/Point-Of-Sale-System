@@ -27,6 +27,7 @@ public class ItemEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "itemId")
     private Long id;
 
     @Column(nullable = false)
@@ -35,14 +36,14 @@ public class ItemEntity {
     private Double price;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "categoryId")
     private CategoryEntity categoryEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "stockId")
+    private StockEntity stockEntity;
 
     @JsonIgnore
     @ManyToMany(mappedBy = "items")
     private Set<CheckoutEntity> checkouts = new HashSet<>();
-
-    @ManyToOne
-    @JoinColumn(name = "stock_id")
-    private StockEntity stockEntity;
 }

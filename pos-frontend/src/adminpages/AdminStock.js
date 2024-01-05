@@ -37,7 +37,7 @@ export default function AdminStock() {
       const response = await axios.get("http://localhost:8080/stocks");
       setStocks(response.data);
     } catch (error) {
-      if (error.response.status == - 401) {
+      if (error.response.status === 401) {
         navigate("/admin/login");
       }
     }
