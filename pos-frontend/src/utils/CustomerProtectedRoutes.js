@@ -4,6 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 
 const CustomerProtectedRoutes = () => {
 
+    
     const token = localStorage.getItem("token");
 
     const navigate = useNavigate();
