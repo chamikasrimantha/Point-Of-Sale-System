@@ -13,21 +13,31 @@ import AdminRegister from './adminpages/Auth/AdminRegister';
 import Home from './customerpages/Home';
 import Login from './customerpages/Auth/Login';
 import Register from './customerpages/Auth/Register';
+import CustomerProtectedRoutes from './utils/CustomerProtectedRoutes';
+import AdminProtectedRoutes from './utils/AdminProtectedRoutes';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/admin' element={<AdminHome />} />
-          <Route path='/admin/categories' element={<AdminCategory />} />
-          <Route path='/admin/items' element={<AdminItem />} />
-          <Route path='/admin/stocks' element={<AdminStock />} />
-          <Route path='/admin/orders' element={<AdminOrder />} />
-          <Route path='/admin/customers' element={<AdminCustomer />} />
+
           <Route path='/admin/login' element={<AdminLogin />} />
           <Route path='/admin/register' element={<AdminRegister />} />
-          <Route path='/' element={<Home />} />
+
+          <Route element={<AdminProtectedRoutes />}>
+            <Route path='/admin' element={<AdminHome />} />
+            <Route path='/admin/categories' element={<AdminCategory />} />
+            <Route path='/admin/items' element={<AdminItem />} />
+            <Route path='/admin/stocks' element={<AdminStock />} />
+            <Route path='/admin/orders' element={<AdminOrder />} />
+            <Route path='/admin/customers' element={<AdminCustomer />} />
+          </Route>
+          
+          <Route element={<CustomerProtectedRoutes />}>
+            <Route path='/' element={<Home />} />
+          </Route>
+
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>

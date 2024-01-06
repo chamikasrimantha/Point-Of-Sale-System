@@ -13,8 +13,14 @@ export default function Home() {
     }, [])
 
     const getItems = async () => {
-        const response = await axios.get("http://localhost:8080/items");
-        setItems(response.data);
+        try {
+            const response = await axios.get("http://localhost:8080/items");
+            setItems(response.data);
+        } catch (error) {
+            if (error.response.status === 401) {
+                navigate("/login");
+            }
+        }
     }
 
     const saveOrder = async () => {

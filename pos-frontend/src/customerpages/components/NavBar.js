@@ -10,6 +10,7 @@ export default function NavBar() {
     }
 
     const logout = () => {
+        localStorage.removeItem("token");
         navigate("/login");
     }
 

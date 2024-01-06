@@ -17,7 +17,7 @@ export default function Register() {
             "password": password,
             "email": email
         }
-        const response = await axios.post("http://localhost:8080/users", data);
+        const response = await axios.post("http://localhost:8080/auth/register", data);
         if (response.status === 200) {
             navigate("/login");
         } else {

@@ -30,6 +30,7 @@ export default function AdminNavBar() {
     }
 
     const logout = () => {
+        localStorage.removeItem("token");
         navigate("/admin/login");
     }
 

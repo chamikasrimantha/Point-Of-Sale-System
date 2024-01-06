@@ -18,7 +18,9 @@ export default function AdminLogin() {
     }
     const response = await axios.post("http://localhost:8080/auth/login", data);
     if (response.status === 200) {
-
+      localStorage.setItem("token", response.data);
+      axios.defaults.headers.common['Authorization'] = `Bearer ${response.data}`;
+      navigate("/admin/");
     } else {
       console.log("login error!");
     }
