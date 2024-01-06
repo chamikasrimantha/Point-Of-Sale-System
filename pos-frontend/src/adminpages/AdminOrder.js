@@ -7,10 +7,10 @@ export default function AdminOrder() {
   const [checkouts, setCheckouts] = useState(null);
 
   useEffect(() => {
-    getOrders();
+    getCheckouts();
   }, []);
 
-  const getOrders = async () => {
+  const getCheckouts = async () => {
     try {
       const response = await axios.get("http://localhost:8080/checkouts");
       setCheckouts(response.data);
@@ -24,7 +24,6 @@ export default function AdminOrder() {
   return (
     <div>
       <AdminNavBar />
-
     </div>
   )
 }

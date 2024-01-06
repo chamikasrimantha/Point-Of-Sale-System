@@ -16,9 +16,6 @@ export default function AdminItem() {
   const [categories, setCategories] = useState(null);
   const [stocks, setStocks] = useState(null);
 
-  const [categoriesMap, setCategoriesMap] = useState({});
-  const [stocksMap, setStocksMap] = useState({});
-
   useEffect(() => {
     getCategories();
     getStocks();
