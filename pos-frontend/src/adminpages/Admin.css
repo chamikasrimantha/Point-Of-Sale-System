@@ -179,3 +179,20 @@ label {
 .register-btn:hover {
     background-color: #0056b3;
 }
+
+/* AdminHome.css */
+.admin-home {
+    /* Styles for the main container div */
+    /* For example: */
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.admin-home-content {
+    /* Styles for the content area */
+    /* For example: */
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: white;
+}
