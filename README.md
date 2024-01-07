@@ -19,7 +19,7 @@
 ```python
 git clone https://github.com/chamikasrimantha/Point-Of-Sale-System.git
 ```
-
+<p></P>
 ```python
 install dependencies
 ```
