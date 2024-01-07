@@ -93,7 +93,7 @@ export default function Home() {
                         </tbody>
                         <thead>
                             <tr>
-                                <th colSpan={2}>Total</th>
+                                <th colSpan={2}>Total (Rs.)</th>
                                 <th>{total}</th>
                             </tr>
                         </thead>
